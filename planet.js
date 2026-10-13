@@ -17,7 +17,7 @@ if (host && webglOK()) {
 
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(32, 1, 0.1, 100);
-  camera.position.set(0, -0.35, 9.5);
+  camera.position.set(0, 0, mobile ? 14 : 10.5);
 
   // Procedural monochrome surface texture (value noise, no network)
   const W = mobile ? 512 : 1024, H = W / 2;
@@ -59,11 +59,11 @@ if (host && webglOK()) {
     new THREE.SphereGeometry(2.25, seg, seg / 2),
     new THREE.ShaderMaterial({
       side: THREE.BackSide, transparent: true, blending: THREE.AdditiveBlending, depthWrite: false,
-      uniforms: { uColor: { value: new THREE.Color(0xeef2ff) } },
+      uniforms: { uColor: { value: new THREE.Color(0xB89878) } },
       vertexShader: `varying vec3 vN; varying vec3 vP;
         void main(){ vN = normalize(normalMatrix*normal); vec4 mv = modelViewMatrix*vec4(position,1.0); vP = mv.xyz; gl_Position = projectionMatrix*mv; }`,
       fragmentShader: `uniform vec3 uColor; varying vec3 vN; varying vec3 vP;
-        void main(){ float d = dot(vN, normalize(-vP)); float i = pow(clamp(-d / 0.43, 0.0, 1.0), 2.4) * 1.1; gl_FragColor = vec4(uColor, 1.0) * i; }`
+        void main(){ float d = dot(vN, normalize(-vP)); float i = pow(clamp(-d / 0.43, 0.0, 1.0), 2.6) * 0.55; gl_FragColor = vec4(uColor, 1.0) * i; }`
     })
   );
   scene.add(atmo);
@@ -75,12 +75,12 @@ if (host && webglOK()) {
       vertexShader: `varying vec3 vN; varying vec3 vP;
         void main(){ vN = normalize(normalMatrix*normal); vec4 mv = modelViewMatrix*vec4(position,1.0); vP = mv.xyz; gl_Position = projectionMatrix*mv; }`,
       fragmentShader: `varying vec3 vN; varying vec3 vP;
-        void main(){ float f = pow(1.0 - max(0.0, dot(vN, normalize(-vP))), 3.0); gl_FragColor = vec4(vec3(0.85,0.9,1.0)*f*0.55, 1.0); }`
+        void main(){ float f = pow(1.0 - max(0.0, dot(vN, normalize(-vP))), 3.0); gl_FragColor = vec4(vec3(1.0,0.82,0.62)*f*0.4, 1.0); }`
     })
   );
   scene.add(rim);
 
-  const sun = new THREE.DirectionalLight(0xffffff, 3.2);
+  const sun = new THREE.DirectionalLight(0xfff1dd, 3.0);
   sun.position.set(-4, 3, 2.5);
   scene.add(sun, new THREE.AmbientLight(0xffffff, 0.04));
 
