@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-name>Alkoriom</title>
+<meta name="description" content="A future company building at the intersection of finance, intelligence, and space.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="starfield" aria-hidden="true"></canvas>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <span class="nav-brand" data-name>Alkoriom</span>
+    <ul class="nav-links">
+      <li><a href="#vision">Vision</a></li>
+      <li><a href="#pillars">Pillars</a></li>
+      <li><a href="#path">The Path</a></li>
+      <li><a href="#join" class="nav-cta">Join us</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+
+  <section class="hero" id="hero">
+    <div class="hero-media" aria-hidden="true">
+      <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="assets/yacht.jpg">
+        <source src="assets/yacht.mp4" type="video/mp4">
+      </video>
+      <img class="hero-still" src="assets/yacht.jpg" alt="">
+    </div>
+    <div class="hero-shade" aria-hidden="true"></div>
+    <div class="hero-content reveal">
+      <p class="eyebrow" data-name>Alkoriom</p>
+      <h1 class="hero-title">Define the future.</h1>
+      <p class="hero-subtitle">Finance, intelligence, and space &mdash; engineered as one system, built by those who refuse to wait for it to arrive.</p>
+      <a href="#join" class="btn-primary">Join the mission</a>
+    </div>
+  </section>
+
+  <section class="vision" id="vision">
+    <div class="planet" id="planet" aria-hidden="true"><div class="planet-fallback"></div></div>
+    <div class="section-inner reveal">
+      <p class="label">Vision</p>
+      <h2 class="statement">
+        We believe the next century belongs to those who can move capital,
+        intelligence, and matter beyond the limits of today.
+      </h2>
+      <p class="vision-sub">
+        <span data-name>Alkoriom</span> exists to compress that timeline &mdash;
+        building the financial infrastructure, the intelligent systems, and
+        the off-world capability that let humanity act at a civilizational scale.
+      </p>
+    </div>
+  </section>
+
+  <section class="pillars" id="pillars">
+    <div class="section-inner">
+      <p class="label reveal">The Three Pillars</p>
+
+      <article class="pillar reveal">
+        <figure class="pillar-media"><img src="assets/neural.jpg" alt="Abstract financial data structure" loading="lazy"></figure>
+        <span class="pillar-num">01</span>
+        <div class="pillar-body">
+          <h3>Finance</h3>
+          <p>Capital allocated with precision, not habit. We are building the financial engine capable of funding decade-long ambitions without flinching at the first quarter.</p>
+        </div>
+      </article>
+
+      <article class="pillar reveal">
+        <figure class="pillar-media"><img src="assets/station.jpg" alt="Orbital station" loading="lazy"></figure>
+        <span class="pillar-num">02</span>
+        <div class="pillar-body">
+          <h3>Intelligence</h3>
+          <p>Systems that think alongside us. Our intelligence layer turns raw complexity into clear decisions, at a speed no human team could match alone.</p>
+        </div>
+      </article>
+
+      <article class="pillar reveal">
+        <figure class="pillar-media"><img src="assets/launch.jpg" alt="Launch at night" loading="lazy"></figure>
+        <span class="pillar-num">03</span>
+        <div class="pillar-body">
+          <h3>Space</h3>
+          <p>The frontier is not a metaphor. We design for a future where orbit is infrastructure, and the solar system is within operational reach.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="path" id="path">
+    <div class="section-inner">
+      <p class="label reveal">The Path</p>
+      <h2 class="path-title reveal">Three ambitions. One trajectory.</h2>
+
+      <ol class="timeline">
+        <li class="timeline-item reveal">
+          <span class="timeline-phase">Phase I</span>
+          <h3>Build the foundation</h3>
+          <p>Assemble the founding team and the first capital base. Prove that finance and intelligence can be designed together, from day one, instead of bolted on later.</p>
+        </li>
+        <li class="timeline-item reveal">
+          <span class="timeline-phase">Phase II</span>
+          <h3>Scale the intelligence</h3>
+          <p>Turn our systems into infrastructure other builders can stand on. Ambition should compound, not restart, with every team that joins.</p>
+        </li>
+        <li class="timeline-item reveal">
+          <span class="timeline-phase">Phase III</span>
+          <h3>Reach beyond Earth</h3>
+          <p>Direct the full weight of our capital and our systems toward a permanent, operational presence in space. Not a mission &mdash; a destination.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="manifesto-cta">
+    <div class="bleed" aria-hidden="true"><img src="assets/horizon.jpg" alt="" loading="lazy"></div>
+    <div class="section-inner reveal">
+      <h2>This is not a career. It is a trajectory.</h2>
+      <p>We are not looking for people who want a job. We are looking for people who want to look back, decades from now, and recognize their fingerprints on what came next.</p>
+    </div>
+  </section>
+
+  <section class="join" id="join">
+    <div class="section-inner reveal">
+      <p class="label">Join us</p>
+      <h2 class="join-title">Tell us who you are.</h2>
+      <p class="join-sub">Talent, partner, investor, or simply curious &mdash; this is where it starts.</p>
+
+      <form id="join-form" class="join-form">
+        <!--
+          Formspree fallback (static hosting, no backend):
+          <form id="join-form" class="join-form" action="https://formspree.io/f/your-form-id" method="POST">
+        -->
+        <div class="form-row">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@domain.com" required>
+        </div>
+
+        <div class="form-row">
+          <label for="role">I am a&hellip;</label>
+          <select id="role" name="role" required>
+            <option value="" disabled selected>Select one</option>
+            <option value="talent">Talent</option>
+            <option value="partner">Partner</option>
+            <option value="investor">Investor</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn-primary">Reach out</button>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="section-inner footer-inner">
+    <span data-name>Alkoriom</span>
+    <span class="footer-tagline">Define the future.</span>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+<script type="module" src="planet.js"></script>
+</body>
+</html>
