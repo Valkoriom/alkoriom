@@ -1,41 +1,54 @@
 # Guide de style montage — AlkoriomAi
 
-> **État des mesures (à lire d'abord).** Le guide devait s'appuyer sur 20 vidéos mesurées (5 par chaîne). Le réseau de cette session bloque youtube.com : ni téléchargement, ni transcription, ni PySceneDetect, ni captures n'ont été possibles. Je n'ai donc **inventé aucun chiffre concurrent**. Les colonnes mesurées restent vides (« ? »).
-> Pour les remplir, sur une machine qui a accès à YouTube :
-> `pip install yt-dlp "scenedetect[opencv-headless]"` puis `python3 outils/analyse_style.py`
-> Le script récupère les 5 dernières vidéos de chaque chaîne en ≤ 240p. Il mesure le débit (mots/min via les sous-titres auto), les coupes/min, la durée moyenne et médiane des plans, les coupes dans les 30 premières secondes, la part de plans avec visage, la position des appels à l'action et du sommaire, et le volume pendant la parole et dans les silences (indice du niveau de musique). Il sort aussi 7 captures et une planche contact par vidéo, puis **supprime les vidéos**.
-> Les **10 règles** ci-dessous sont des **cibles chiffrées pour AlkoriomAi**. Elles s'appuient sur notre script (195 mots/min, ≈ 25 min), sur les retours de Léandre et sur les standards de diffusion YouTube. Il faudra les recaler une fois les moyennes concurrentes mesurées.
+> **État des mesures (28/10, après ouverture du réseau).** Les données publiques des 20 vidéos ont été relevées sur la page « Vidéos » de chaque chaîne : titre, vues, durée, miniature. Les miniatures ont été téléchargées pour analyse interne et ne sont pas versionnées. **Le téléchargement des vidéos est refusé par YouTube** (« Sign in to confirm you're not a bot ») depuis les serveurs cloud. Je ne contourne pas cette protection. Les mesures qui exigent le fichier vidéo (débit, coupes/min, plans, musique, appels à l'action, 30 premières secondes) restent donc marquées « non mesuré ». On les obtient avec `python3 outils/analyse_style.py`, lancé depuis un ordinateur personnel, ou en fournissant les fichiers vidéo.
+> Les vues sont celles du 28/10. Les vidéos les plus récentes (AesHUcW-B3s, 1kQ_1_QL5Es) ont quelques heures et ne sont pas comparables.
+> Les titres de SamouraiDansant s'affichent **en anglais** : YouTube les traduit automatiquement pour la région du serveur. Les miniatures, elles, sont en français. Les titres originaux restent à relever.
 
 ## 1. Tableau comparatif (20 vidéos)
 
-| Chaîne | Vidéo | Durée | Vues | Mots/min | Coupes/min | Plan moyen (s) | Face cam / démos / captures / B-roll / texte (%) | 30 premières s | Sommaire | Transitions | Musique (présence / changements / niveau sous voix) | CTA (position) | Écran de fin | Miniature / titre |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| SamouraiDansant | IHs3jiBz6yU (26/10) | ? | 55 k | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? |
-| SamouraiDansant | O8LpZbK8dgg (22/10) | ? | 92 k | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? |
-| SamouraiDansant | 3 autres (à récupérer) | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? |
-| VisionIA-FR | gvh9JpAC7GI (28/10) | ? | 22 k | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? |
-| VisionIA-FR | Cd4VaFWb4U8 (26/10) | ? | 222 k | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? | Titre : rupture + urgence + parenthèse (« … (et personne n'en parle) ») |
-| VisionIA-FR | 3 autres (à récupérer) | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? |
-| AILABS-393 | xxf6D9jynFw | ? | 151 k | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? |
-| AILABS-393 | 92ZDgn8bgLM | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? |
-| AILABS-393 | 3 autres (à récupérer) | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? |
-| theAIsearch | EfyQOAJjx1A (~25/10) | 43:06 | 352 k | ? | ? | ? | ? | ? | ? | ? | ? | Sponsor (Luma) : position ? | ? | Titre « catalogue » : 7 noms + « AI NEWS » |
-| theAIsearch | 1Aqhg0FVm-w (~23/10) | ? | 909 k | ? | ? | ? | ? | ? | ? | ? | ? | Sponsor (Higgsfield) : position ? | ? | Titre court, un seul nom fort (« Deepseek strikes again ») |
-| theAIsearch | 3 autres (à récupérer) | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? |
+Colonnes non mesurables sans le fichier vidéo : mots/min, coupes/min, plan moyen, mélange de visuels, 30 premières s, sommaire, transitions, musique, position des appels à l'action, écran de fin.
+
+| Chaîne | Vidéo | Titre (tel qu'affiché) | Durée | Vues (28/10) | Car. titre | Miniature |
+|---|---|---|---|---|---|---|
+| SamouraiDansant | [AesHUcW-B3s](https://www.youtube.com/watch?v=AesHUcW-B3s) | Microsoft: The Two Shock Absorbers | 24:33 | 4,5 k (très récente) | 34 | Portrait N&B détouré à droite, logos Microsoft en couleur, 4 mots blancs en capitales |
+| SamouraiDansant | [IHs3jiBz6yU](https://www.youtube.com/watch?v=IHs3jiBz6yU) | New MacBooks & AI: The Real Math Before Buying Apple This Year | 28:47 | 60 k | 62 | Portrait N&B, produit (MacBook) en couleur, chiffre « 24 Go » + 3 mots |
+| SamouraiDansant | [O8LpZbK8dgg](https://www.youtube.com/watch?v=O8LpZbK8dgg) | The web is broken: What the last 48 hours have revealed | 34:47 | 93 k | 55 | Portrait N&B, illustration d'engrenages, 3 mots en capitales |
+| SamouraiDansant | [QzgsvzV7c8Y](https://www.youtube.com/watch?v=QzgsvzV7c8Y) | "They've annihilated my field": The job we thought was untouchable has just fallen | 28:31 | 58 k | 82 | Groupe de six personnalités en N&B, 4 mots en capitales |
+| SamouraiDansant | [6C4dc7VhzmY](https://www.youtube.com/watch?v=6C4dc7VhzmY) | Nobody is ready for the world Elon Musk showed us last night | 26:41 | 64 k | 60 | Portrait N&B, 3 logos de marques, véhicule, 3 mots |
+| VisionIA-FR | [gvh9JpAC7GI](https://www.youtube.com/watch?v=gvh9JpAC7GI) | Voici ce que l'IA vient de trouver dans le cerveau | 23:22 | 112 k | 50 | Visage du créateur (mains jointes, inquiet), halo rouge, 2 blocs de texte jaune et blanc |
+| VisionIA-FR | [Cd4VaFWb4U8](https://www.youtube.com/watch?v=Cd4VaFWb4U8) | La robotique vient de basculer en 7 jours (et personne n'en parle) | 18:01 | 238 k | 66 | Créateur (mains sur la tête), robots en usine, personnalité, drapeau, texte blanc sur bandeau rouge + texte jaune |
+| VisionIA-FR | [ugNTkcvND08](https://www.youtube.com/watch?v=ugNTkcvND08) | Voici ce que l'IA vient de trouver au cœur d'Internet | 16:53 | 111 k | 53 | Créateur (main sur le visage), logos OpenAI et Google, flèche rouge, « FAILLE CRITIQUE » en rouge |
+| VisionIA-FR | [8GMoD4Subss](https://www.youtube.com/watch?v=8GMoD4Subss) | L'IA vidéo vient de briser sa plus grosse limite | 22:30 | 103 k | 48 | Créateur (mains sur la tête), puce dorée cerclée de rouge, question en capitales blanches |
+| VisionIA-FR | [H2a8MuxpDWw](https://www.youtube.com/watch?v=H2a8MuxpDWw) | Cette IA ne sait pas écrire (et OpenAI la copie déjà) | 16:21 | 105 k | 53 | Créateur (mains sur la tête), logo produit néon rose, texte jaune avec « ! » |
+| AILABS-393 | [1kQ_1_QL5Es](https://www.youtube.com/watch?v=1kQ_1_QL5Es) | This Is Microsoft's New Plan To Fix Claude's Usage Limits | 13:08 | 6,8 k (très récente) | 57 | Fond anthracite, logos plats reliés par un schéma, 2 mots dont 1 surligné jaune |
+| AILABS-393 | [xxf6D9jynFw](https://www.youtube.com/watch?v=xxf6D9jynFw) | EGM: Google's New Way To Use Claude Code Is Insane | 15:54 | 158 k | 50 | Fond anthracite, logo Google + icône produit, 2 mots dont 1 surligné |
+| AILABS-393 | [92ZDgn8bgLM](https://www.youtube.com/watch?v=92ZDgn8bgLM) | Anthropic Just Revealed How Their Engineers Use Claude Code | 11:48 | 48 k | 59 | Fond anthracite, personnalité détourée, orbite d'icônes, 3 mots dont 2 surlignés |
+| AILABS-393 | [y2ifUC9_zuU](https://www.youtube.com/watch?v=y2ifUC9_zuU) | Vercel's CEO's AI Coding Workflow Is Actually Insane | 14:22 | 51 k | 52 | Fond anthracite, personnalité détourée sur bande papier, icônes d'outils, 2 mots |
+| AILABS-393 | [NZjjmf3I6I4](https://www.youtube.com/watch?v=NZjjmf3I6I4) | 6 Insane Trending GitHub AI Design Repos You Need to Use | 10:21 | 62 k | 56 | Fond anthracite, faux bouton GitHub « Star 163K », flèche rouge, 3 mots |
+| theAIsearch | [EfyQOAJjx1A](https://www.youtube.com/watch?v=EfyQOAJjx1A) | Cyber hacks, Kimi K3.1, AI for DNA, AI for engineering, new TTS, Claude Duet, Dessa: AI NEWS | 43:06 | 357 k | 93 | Bandeau bleu « huge AI news » + 2 images tirées des sujets |
+| theAIsearch | [1Aqhg0FVm-w](https://www.youtube.com/watch?v=1Aqhg0FVm-w) | Deepseek strikes again | 27:22 | 922 k | 22 | Bandeau bleu « they're back », portrait sur explosion + logo baleine lumineux |
+| theAIsearch | [cUeZMUGCxrw](https://www.youtube.com/watch?v=cUeZMUGCxrw) | New top local AI image generator is here! | 21:56 | 393 k | 41 | Bandeau bleu « free & unlimited », photo + exemples d'images générées |
+| theAIsearch | [tDWtcyeNNew](https://www.youtube.com/watch?v=tDWtcyeNNew) | Quantum breakthrough, Gemini 4 Argon, MOSS Image, KLING 4, OpenAI spy, Muse Wonder: AI NEWS | 40:55 | 579 k | 91 | Bandeau bleu « huge AI news » + 2 images tirées des sujets |
+| theAIsearch | [X0_GDOkLKzQ](https://www.youtube.com/watch?v=X0_GDOkLKzQ) | New AI enzymes, 700+ math breakthroughs, AI for DNA mutations, room temp semiconductors: AI NEWS | 45:12 | 398 k | 96 | Bandeau bleu « huge AI news » + 2 images tirées des sujets |
 
 ## 2. Moyennes par chaîne
 
-| Chaîne | Durée moy. | Vues moy. | Mots/min | Coupes/min | Plan moyen (s) | Coupes 0-30 s | % face cam | Voix (dB) | Silences (dB) |
-|---|---|---|---|---|---|---|---|---|---|
-| SamouraiDansant | ? | ? | ? | ? | ? | ? | ? | ? | ? |
-| VisionIA-FR | ? | ? | ? | ? | ? | ? | ? | ? | ? |
-| AILABS-393 | ? | ? | ? | ? | ? | ? | ? | ? | ? |
-| theAIsearch | ? | ? | ? | ? | ? | ? | ? | ? | ? |
-| **AlkoriomAi (cible)** | 22-26 min | — | 185-195 | 10-15 | 4-6 | ≥ 6 | ≤ 10 | −14 LUFS | musique à −32/−34 LUFS |
+| Chaîne | Durée moy. (min-max) | Vues moy. | Vues médiane | Long. titre moy. | Visage du créateur sur la miniature | Mots sur la miniature |
+|---|---|---|---|---|---|---|
+| SamouraiDansant | 28:39 (24:33-34:47) | 55,9 k | 60 k | 59 car. | 0/5 (personnalités en N&B) | 2-4, capitales blanches |
+| VisionIA-FR | 19:25 (16:21-23:22) | 133,8 k | 111 k | 54 car. | 5/5 (expression choquée) | 2-5, jaune/rouge, « ! » ou « ? » |
+| AILABS-393 | 13:06 (10:21-15:54) | 65,2 k | 51 k | 55 car. | 0/5 | 2-3, 1 mot surligné jaune |
+| theAIsearch | 35:42 (21:56-45:12) | 529,8 k | 398 k | 69 car. | 0/5 | 2-3, minuscules blanches sur bandeau fixe |
+| **AlkoriomAi (épisode 28/10)** | ≈ 25:37 | — | — | cible ≤ 60 | 0 (règle 10) | 2-4, or pâle |
 
-*(Le script génère ce tableau dans `resultats/moyennes.md`.)*
+Mots/min, coupes/min, plan moyen, % face caméra et niveaux sonores : **non mesuré** (le téléchargement des vidéos est bloqué par YouTube).
 
-**Seules observations possibles sans les vidéos** (titres et vues) : chez theAIsearch, la vidéo sur un seul sujet fort fait environ 2,6 fois les vues du récapitulatif. Chez Vision IA, le bilan robotique hebdomadaire fait dix fois la vidéo du jour. Les deux chaînes anglophones affichent un sponsor dans la description.
+**Ce que montrent les données publiques**
+- **Un gabarit fixe.** Chaque chaîne garde la même charte sur 5/5 miniatures : bandeau bleu chez theAIsearch, fond anthracite et surlignage jaune chez AI LABS, noir et blanc chez Samouraï, visage choqué chez Vision IA. La chaîne est reconnaissable avant même de lire le titre.
+- **Un sujet fort bat une liste.** Chez theAIsearch, le titre de 22 caractères sur un seul sujet (DeepSeek, 922 k) bat les récapitulatifs de 91-96 caractères (357-579 k).
+- **Une formule répétée.** Vision IA utilise « vient de… » dans 4 titres sur 5, et 2 sur 5 se terminent par une parenthèse. Leur meilleure vidéo, la robotique (238 k), fait le double de la médiane de la chaîne.
+- **La durée.** Les deux chaînes francophones durent 16 à 35 min. Nos ≈ 25 min sont dans la fourchette.
+- **Les logos.** Ils sont présents sur 10/20 miniatures (5/5 chez AI LABS ; Microsoft, Google, OpenAI, Tesla, DeepSeek…). C'est cohérent avec la règle « logos à l'écran » de Léandre.
 
 ## 3. Dix règles chiffrées pour AlkoriomAi
 
@@ -48,7 +61,7 @@
 7. **La vulgarisation se voit aussi.** Chaque terme technique (agent, poids ouverts, diffusion, S-1, MCP…) a son « en clair » oral et un mot-clé à l'écran de 6 mots maximum, au plus un toutes les 10 s. Un schéma simple remplace toute explication de plus de 20 s. Sous-titres incrustés en 2 lignes de 32 caractères maximum, si on les active.
 8. **Les appels à l'action sont placés précisément.** Aucun appel avant 60 s. L'appel à l'abonnement (abonnez-vous, likez, partagez, merci) tombe entre 45 et 55 % de la durée (≈ 47 %, soit 12:02, dans l'épisode du 28/10) et dure moins de 20 s. L'appel à commenter vient dans la dernière minute. Écran de fin : 20 s avec 2 éléments (vidéo suivante et abonnement), musique seule, sans nouvelle info.
 9. **Le mélange de visuels est maîtrisé.** Captures de sources officielles et démos officielles : au moins 50 % du temps. Schémas et animations explicatives : 30 à 40 %. Carton ou Léandre à l'écran (AVIS) : 10 % maximum. B-roll générique : 10 % maximum, jamais sur un fait chiffré. Toute démo d'entreprise porte un bandeau « Démo officielle [entreprise] » d'au moins 3 s. Toute vidéo promotionnelle (ex. Unitree) porte un bandeau d'avertissement.
-10. **Miniature et titre : un sujet, une promesse vraie.** Titre de 60 caractères maximum, un sujet principal (le plus gros nom du jour) et au plus une marque ou un chiffre en plus. Pas de liste de 5 noms. Miniature à 3 éléments maximum (objet ou robot, logo, 2 à 4 mots en or pâle sur fond noir et bleu électrique), lisible à 160 px de large. Interdits : faux visage choqué, flèches rouges, promesse absente de la vidéo.
+10. **Miniature et titre : un sujet, une promesse vraie, un gabarit fixe.** Comme les 4 concurrents (5/5 miniatures cohérentes chez chacun), un seul gabarit AlkoriomAi pour toutes les vidéos : fond noir, un mot surligné en or pâle, logo du sujet en couleur, accent bleu électrique. Titre de 60 caractères maximum, un sujet principal (le plus gros nom du jour) et au plus une marque ou un chiffre en plus. Pas de liste de 5 noms. Miniature à 3 éléments maximum (objet ou robot, logo, 2 à 4 mots en or pâle sur fond noir et bleu électrique), lisible à 160 px de large. Interdits : faux visage choqué, flèches rouges, promesse absente de la vidéo.
 
 ## 4. Garde-fous
 

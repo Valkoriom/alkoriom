@@ -1,27 +1,34 @@
 # Veille concurrents — épisode du 28/10/2026
 
-> **Limite importante.** Le réseau de cette session bloque youtube.com et les sites des sources officielles (openai.com, salesforce.com, etc.). Seule la recherche web passait. Résultat : **aucune transcription n'a pu être téléchargée** (yt-dlp renvoie « 403 Forbidden ») et les titres, durées et vues ci-dessous viennent des repères déjà relevés ou d'index tiers. Les cases « ? » restent à compléter avec `python3 outils/analyse_style.py`, à lancer depuis une machine qui a accès à YouTube.
+> **Limite importante.** Titres, durées et vues viennent de la page « Vidéos » des chaînes, relevés le 28/10 après ouverture du réseau. En revanche, YouTube refuse de servir les vidéos et les sous-titres à ce serveur cloud (« Sign in to confirm you're not a bot »). **Aucune transcription n'a donc pu être lue.** Les sites officiels des sources (openai.com, salesforce.com…) n'ont pas été rouverts : les vérifications passent toujours par la recherche web. Les dates de publication ne sont pas affichées sur la page « Vidéos » ; celles indiquées viennent des repères déjà relevés.
 
-## 1. Vidéos relevées
+## 1. Vidéos relevées (données publiques de la page « Vidéos » de chaque chaîne, le 28/10)
 
-| Chaîne | Titre | Date | Vues | Durée | URL |
+Les 5 dernières vidéos de chaque chaîne, avec titre, durée, vues et miniature, figurent dans `guide_style_montage.md` (section 1). Les vidéos des ~72 dernières heures :
+
+| Chaîne | Titre (tel qu'affiché) | Date | Vues | Durée | URL |
 |---|---|---|---|---|---|
-| @SamouraiDansant (chaîne renommée « IA et Stratégie ») | ? | 26/10 | 55 k | ? | https://www.youtube.com/watch?v=IHs3jiBz6yU |
-| @SamouraiDansant | ? | 22/10 | 92 k | ? | https://www.youtube.com/watch?v=O8LpZbK8dgg |
-| @VisionIA-FR | ? | 28/10 | 22 k | ? | https://www.youtube.com/watch?v=gvh9JpAC7GI |
-| @VisionIA-FR | « La robotique vient de basculer en 7 jours (et personne n'en parle) » | 26/10 | 222 k | ? | https://www.youtube.com/watch?v=Cd4VaFWb4U8 |
-| @AILABS-393 | ? (chaîne de tutoriels « construire avec l'IA », éditée par autometa.dev) | ? | 151 k | ? | https://www.youtube.com/watch?v=xxf6D9jynFw |
-| @AILABS-393 | ? | ? | ? | ? | https://www.youtube.com/watch?v=92ZDgn8bgLM |
-| @theAIsearch | « Cybersecurity chaos, AI for DNA, Kimi K3.1, Claude Duet, Dessa, Fibo 2, Minimax 3.1: AI NEWS » (sponsor : Luma) | ~25/10 | 352 k (263 k selon un index tiers, relevé plus tôt) | 43:06 (index tiers) | https://www.youtube.com/watch?v=EfyQOAJjx1A |
-| @theAIsearch | « Deepseek strikes again » (DeepSeek V4.1 Flash + DeepInfer ; sponsor : Higgsfield) | ~23/10 | 909 k | ? | https://www.youtube.com/watch?v=1Aqhg0FVm-w |
+| @SamouraiDansant | Microsoft: The Two Shock Absorbers (titre traduit automatiquement par YouTube) | 28/10 (récente) | 4,5 k | 24:33 | https://www.youtube.com/watch?v=AesHUcW-B3s |
+| @SamouraiDansant | New MacBooks & AI: The Real Math Before Buying Apple This Year (traduit) | 26/10 | 60 k | 28:47 | https://www.youtube.com/watch?v=IHs3jiBz6yU |
+| @SamouraiDansant | The web is broken: What the last 48 hours have revealed (traduit) | 22/10 | 93 k | 34:47 | https://www.youtube.com/watch?v=O8LpZbK8dgg |
+| @VisionIA-FR | Voici ce que l'IA vient de trouver dans le cerveau | 28/10 | 112 k | 23:22 | https://www.youtube.com/watch?v=gvh9JpAC7GI |
+| @VisionIA-FR | La robotique vient de basculer en 7 jours (et personne n'en parle) | 26/10 | 238 k | 18:01 | https://www.youtube.com/watch?v=Cd4VaFWb4U8 |
+| @AILABS-393 | This Is Microsoft's New Plan To Fix Claude's Usage Limits | récente | 6,8 k | 13:08 | https://www.youtube.com/watch?v=1kQ_1_QL5Es |
+| @AILABS-393 | EGM: Google's New Way To Use Claude Code Is Insane | ? | 158 k | 15:54 | https://www.youtube.com/watch?v=xxf6D9jynFw |
+| @AILABS-393 | Anthropic Just Revealed How Their Engineers Use Claude Code | ? | 48 k | 11:48 | https://www.youtube.com/watch?v=92ZDgn8bgLM |
+| @theAIsearch | Cyber hacks, Kimi K3.1, AI for DNA, AI for engineering, new TTS, Claude Duet, Dessa: AI NEWS | ~25/10 | 357 k | 43:06 | https://www.youtube.com/watch?v=EfyQOAJjx1A |
+| @theAIsearch | Deepseek strikes again | ~23/10 | 922 k | 27:22 | https://www.youtube.com/watch?v=1Aqhg0FVm-w |
+
+**Transcriptions : non obtenues.** YouTube refuse l'accès aux vidéos et aux sous-titres depuis ce serveur (« Sign in to confirm you're not a bot »). Les sujets ci-dessous viennent donc des titres, des miniatures et de la recherche web, pas du contenu parlé.
 
 ## 2. Analyse (limitée aux titres, sujets et descriptions)
 
 **Sujets couverts par les concurrents**
+- IA et Stratégie (ex-Samouraï Dansant), d'après les titres et miniatures : coût de l'IA chez Microsoft, choix d'un Mac pour l'IA (« 24 Go »), crise du web, métiers menacés, stratégie d'Elon Musk (Tesla, SpaceX, xAI). Des analyses longues (25-35 min).
+- AI LABS, d'après les titres : outils autour de Claude Code (Microsoft, Google, méthode des ingénieurs d'Anthropic, workflow du PDG de Vercel), dépôts GitHub de design.
+- Vision IA, d'après les titres : IA et cerveau, une faille au cœur d'Internet, la vidéo IA, un nouveau type d'IA (« ne sait pas écrire », ce qui pourrait être un modèle par diffusion, non vérifié).
 - theAIsearch : récapitulatif hebdomadaire de 43 minutes. Au menu : cyberattaques menées par des IA, IA appliquée à l'ADN, Kimi K3.1 Pro, Claude Duet (agent proactif d'Anthropic), Dessa (voix), Fibo 2, MiniMax M3.1, Hi3D. À côté, une vidéo dédiée à un seul sujet : DeepSeek V4.1 Flash et DeepInfer.
 - Vision IA : un bilan robotique de la semaine (« en 7 jours »). Les descriptions renvoient vers leur académie payante.
-- IA et Stratégie (ex-Samouraï Dansant) : analyses stratégiques (business, carrière, finance). Le sujet précis des deux dernières vidéos n'a pas pu être lu.
-- AI LABS : tutoriels pratiques. Le sujet des deux vidéos n'a pas pu être lu.
 
 **Sujets absents de notre script (et décision)**
 
@@ -38,14 +45,14 @@
 **Angle et accroche (d'après les titres)**
 - theAIsearch empile 5 à 7 noms de marques dans le titre. C'est l'effet « catalogue » : le spectateur repère au moins un sujet qui l'intéresse.
 - Vision IA mise sur la rupture et l'urgence (« vient de basculer », « (et personne n'en parle) », « en 7 jours »), avec une parenthèse qui crée de la curiosité.
-- Quand un seul sujet très attendu sort (DeepSeek), une vidéo dédiée fait environ 2,6 fois les vues du récapitulatif (909 k contre 352 k).
+- Quand un seul sujet très attendu sort (DeepSeek), une vidéo dédiée fait environ 2,6 fois les vues du récapitulatif (922 k contre 357 k).
 
 **Structure, rythme, montage** : non mesurés (pas d'accès aux vidéos). Voir `guide_style_montage.md` et le script de mesure.
 
 ## 3. Enseignements
 
-1. **Un gros nom bat un catalogue.** La vidéo DeepSeek seule fait environ 2,6 fois le récapitulatif de la même chaîne. Notre titre doit donc porter un seul sujet fort, par exemple « Le bouton STOP des IA » ou « Anthropic entre en Bourse », plutôt qu'une liste.
-2. **La robotique fait des vues en français.** Le bilan robotique de Vision IA atteint 222 k, soit dix fois leur vidéo du jour. Il faut garder le teaser Unitree dans l'accroche et soigner le chapitre robots.
+1. **Un gros nom bat un catalogue.** La vidéo DeepSeek seule (922 k) fait environ 2,6 fois le récapitulatif (357 k) de la même chaîne. Notre titre doit donc porter un seul sujet fort, par exemple « Le bouton STOP des IA » ou « Anthropic entre en Bourse », plutôt qu'une liste.
+2. **La robotique fait des vues en français.** Le bilan robotique de Vision IA atteint 238 k, soit plus du double de la médiane de la chaîne (111 k). Il faut garder le teaser Unitree dans l'accroche et soigner le chapitre robots.
 3. **Notre avantage, c'est la fraîcheur.** Salesforce, Terra, Oracle et IBM datent du 27/10, après les récapitulatifs du 25-26/10 des concurrents. L'accroche doit insister sur « hier ».
 4. **L'urgence sans exagération.** Les formules « vient de… » marchent, mais notre ligne, c'est le vérifié. Exemple : « Les IA ont maintenant un bouton STOP », sans promesse fausse.
 5. **Le sujet finance/Bourse était un trou dans notre script.** C'est l'événement le plus médiatisé du 26/10. Il est ajouté, avec les chiffres expliqués simplement (perte surtout comptable).
