@@ -1,0 +1,16 @@
+00_accroche.md           211 mots  début ~0:00
+01_stop.md               671 mots  début ~1:04
+02_terra.md              360 mots  début ~4:31
+02b_oracle.md            315 mots  début ~6:22
+02c_anthropic.md         354 mots  début ~7:59
+03_kimi.md               441 mots  début ~9:48
+03b_abonnement.md         57 mots  début ~12:03
+04_lfm3.md               391 mots  début ~12:21
+06_clover.md             446 mots  début ~14:21
+07_tellers.md            356 mots  début ~16:38
+08_genie.md              346 mots  début ~18:28
+09_robots.md             439 mots  début ~20:14
+09b_enbref.md            207 mots  début ~22:29
+09c_pratique.md          241 mots  début ~23:33
+10_bilan.md              161 mots  début ~24:47
+TOTAL 4996 mots ≈ 25.6 min à 195 mots/min ; moitié = 2498 mots
